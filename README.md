@@ -5,8 +5,11 @@ This project creates a **tooltip** using **React**.
 ## Installation
 
 `yarn` or `npm i` to install packages
+
 `yarn dev` or `npm run dev` to run the app locally
+
 App starts on http://localhost:5000/
+
 It shows 2 examples of how to use this component:
 
 - the first one is a header using positioning defined in your jsx. 4 options are available: `top`, `bottom`, `left` and `right`.
