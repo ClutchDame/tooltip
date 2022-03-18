@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Tooltip from "./Tooltip";
 import "../styles/Tooltip.scss";
 
@@ -36,5 +37,17 @@ function TooltipWrapper({ children, content, position }) {
     </div>
   );
 }
+
+TooltipWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  position: PropTypes.oneOf(["top", "right", "bottom", "left"]),
+};
+
+TooltipWrapper.defaultProps = {
+  children: null,
+  content: "",
+  position: "bottom",
+};
 
 export default TooltipWrapper;
