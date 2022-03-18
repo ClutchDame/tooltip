@@ -1,5 +1,8 @@
+@import "./TooltipAnimation.scss";
+
 .tooltip__wrapper {
   position: relative;
+  cursor: default;
 
   .tooltip__content {
     position: absolute;
@@ -7,30 +10,77 @@
     max-width: 150px;
     min-width: 30px;
     padding: 0.25em 0.5em;
+    border-radius: 0.25em;
     margin-top: 5px;
     text-align: center;
-    border-radius: 0.125em;
     background-color: #0a0039;
     color: #fff;
     font-size: 0.875em;
 
+    @media (prefers-reduced-motion) {
+      animation: none;
+    }
+
     &::before {
       content: "";
+      position: absolute;
       width: 0;
       height: 0;
-      position: absolute;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #0a0039;
+      margin-left: -5px;
     }
 
     &.bottom {
       left: 0;
+      animation: springBottom 200ms ease-in forwards;
 
       &::before {
         top: -5px;
         left: 50%;
-        margin-left: -5px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid #0a0039;
+      }
+    }
+
+    &.top {
+      bottom: 100%;
+      left: 0;
+      animation: springTop 200ms ease-in forwards;
+
+      &::before {
+        bottom: -5px;
+        left: 50%;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.right {
+      top: calc(50% - 5px);
+      left: 100%;
+      transform: translateY(-50%);
+      animation: springRight 200ms ease-in forwards;
+
+      &::before {
+        top: calc(50% - 5px);
+        left: -5px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #0a0039;
+        transform: rotate(180deg);
+      }
+    }
+
+    &.left {
+      top: calc(50% - 5px);
+      right: 100%;
+      animation: springLeft 200ms ease-in forwards;
+
+      &::before {
+        top: calc(50% - 5px);
+        right: -10px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #0a0039;
       }
     }
   }
