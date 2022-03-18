@@ -1,0 +1,37 @@
+.tooltip__wrapper {
+  position: relative;
+
+  .tooltip__content {
+    position: absolute;
+    width: fit-content;
+    max-width: 150px;
+    min-width: 30px;
+    padding: 0.25em 0.5em;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 0.125em;
+    background-color: #0a0039;
+    color: #fff;
+    font-size: 0.875em;
+
+    &::before {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    &.bottom {
+      left: 0;
+
+      &::before {
+        top: -5px;
+        left: 50%;
+        margin-left: -5px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #0a0039;
+      }
+    }
+  }
+}
