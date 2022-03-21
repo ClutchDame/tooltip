@@ -10,10 +10,14 @@ This project creates a **tooltip** using **React**.
 
 App starts on http://localhost:5000/
 
-It shows 2 examples of how to use this component:
+It shows how the component can be used :
 
-- the first one is a header using positioning defined in your jsx. 4 options are available: `top`, `bottom`, `left` and `right`.
-- another one (still WIP) shows how to use tooltip with smart positining, ie the tooltip will set its own position if it is outside of the viewport.
+- by setting the position parameter yourself (use one of `top`, `bottom`, `left` and `right`)
+
+- by setting `smartPosition`to `true`, and the tooltip will decide its best position itself.
+
+You will see 2 components using smart positioned tooltips.
+The last one is a footer-like component to show how the tooltip changes position when close to the bottom of the viewport.
 
 ## Requirements
 
@@ -37,8 +41,9 @@ node >= 12.2.0
 ## What it doesn't do
 
 Use fancy libs.
+Scroll management. As the exercise mentioned, this is a prototype, I'll see with the designers what they think of this first version and adapt from there.
 
 ## What it doesn't do but could pretend to
 
 User customizable animations.
-Offer more positioning options (on element's 4 corners).
+Offer more positioning options : on element's 4 corners, giving it 8 possibilities.
