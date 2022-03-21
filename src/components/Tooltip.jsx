@@ -3,12 +3,18 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import "../styles/Tooltip.scss";
 
-function Tooltip({ content, position }) {
+function Tooltip({ content, position, safePosition }) {
   const renderContent = () =>
     typeof content === "function" ? content() : content;
 
   return (
-    <div className={classNames("tooltip__content", position)} role="tooltip">
+    <div
+      className={classNames(
+        "tooltip__content",
+        safePosition ? safePosition : position
+      )}
+      role="tooltip"
+    >
       {renderContent()}
     </div>
   );
@@ -17,6 +23,7 @@ function Tooltip({ content, position }) {
 Tooltip.propTypes = {
   content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   position: PropTypes.oneOf(["top", "right", "bottom", "left"]),
+  safePosition: PropTypes.oneOf(["top", "right", "bottom", "left"]),
 };
 
 Tooltip.defaultProps = {
