@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Message from "./Message";
-import TooltipWrapper from "./TooltipWrapper";
+import Tooltip from "./Tooltip";
 import "../styles/Header.scss";
 
 function Header() {
@@ -64,20 +64,24 @@ function Header() {
       </form>
       <header>
         <ul>
-          <TooltipWrapper position={position} content="🏡 is for everyone">
-            <li>Home</li>
-          </TooltipWrapper>
-          <li>Our product</li>
-          <TooltipWrapper position={position} content={Message}>
-            <li>Who are we?</li>
-          </TooltipWrapper>
+          <li>Home</li>
+          <li>
+            Our product
+            <Tooltip position={position}>🏡 is for everyone</Tooltip>
+          </li>
+          <li>
+            Who are we?
+            <Tooltip position={position}>
+              <Message />
+            </Tooltip>
+          </li>
           <li>Jobs</li>
-          <TooltipWrapper
-            position={position}
-            content="Some content with veryveryverylong words inside"
-          >
-            <li>FAQ</li>
-          </TooltipWrapper>
+          <li>
+            FAQ
+            <Tooltip position={position}>
+              Some content with veryveryverylong words inside
+            </Tooltip>
+          </li>
         </ul>
       </header>
     </>

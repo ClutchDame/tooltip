@@ -1,5 +1,5 @@
 import Message from "./Message";
-import TooltipWrapper from "./TooltipWrapper";
+import Tooltip from "./Tooltip";
 import "../styles/Header.scss";
 
 function Header() {
@@ -17,32 +17,42 @@ function Header() {
       </article>
       <header>
         <ul>
-          <TooltipWrapper content="🏡 is for everyone">
-            <li>Home</li>
-          </TooltipWrapper>
-          <li>Our product</li>
-          <TooltipWrapper content={Message}>
-            <li>Who are we?</li>
-          </TooltipWrapper>
+          <li>Home</li>
+          <li>
+            Our product
+            <Tooltip>🏡 is for everyone</Tooltip>
+          </li>
+          <li>
+            Who are we?
+            <Tooltip>
+              <Message />
+            </Tooltip>
+          </li>
           <li>Jobs</li>
-          <TooltipWrapper content="Some content with veryveryverylong words inside">
-            <li>FAQ</li>
-          </TooltipWrapper>
+          <li>
+            FAQ
+            <Tooltip>Some content with veryveryverylong words inside</Tooltip>
+          </li>
         </ul>
       </header>
       <header style={{ marginTop: "auto" }}>
         <ul>
-          <TooltipWrapper content="Some content with veryveryverylong words inside">
-            <li>Home</li>
-          </TooltipWrapper>
+          <li>
+            Home
+            <Tooltip>Some content with veryveryverylong words inside</Tooltip>
+          </li>
           <li>Our product</li>
-          <TooltipWrapper content={Message}>
-            <li>Who are we?</li>
-          </TooltipWrapper>
+          <li>
+            Who are we?
+            <Tooltip>
+              <Message />
+            </Tooltip>
+          </li>
           <li>Jobs</li>
-          <TooltipWrapper content="Frequently asked questions">
-            <li>FAQ</li>
-          </TooltipWrapper>
+          <li>
+            FAQ
+            <Tooltip>Frequently asked questions</Tooltip>
+          </li>
         </ul>
       </header>
     </>

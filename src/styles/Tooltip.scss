@@ -3,6 +3,9 @@
 .tooltip__wrapper {
   position: relative;
   cursor: default;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
 
   .tooltip__content {
     position: absolute;
@@ -33,8 +36,10 @@
       margin-left: -5px;
     }
 
-    &.bottom {
+    &.bottom,
+    &.auto {
       left: 0;
+      top: calc(100% + 5px);
       animation: springBottom 200ms ease-in forwards;
 
       &::before {
@@ -44,7 +49,7 @@
     }
 
     &.top {
-      bottom: 100%;
+      bottom: calc(100% + 5px);
       left: 0;
       animation: springTop 200ms ease-in forwards;
 
@@ -57,7 +62,7 @@
 
     &.right {
       top: calc(50% - 5px);
-      left: 100%;
+      left: calc(100% + 5px);
       transform: translateY(-50%);
       animation: springRight 200ms ease-in forwards;
 
@@ -73,7 +78,7 @@
 
     &.left {
       top: calc(50% - 5px);
-      right: 100%;
+      right: calc(100% + 10px);
       animation: springLeft 200ms ease-in forwards;
 
       &::before {
