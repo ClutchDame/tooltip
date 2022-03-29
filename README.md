@@ -14,7 +14,7 @@ It shows how the component can be used :
 
 - by setting the position parameter yourself (use one of `top`, `bottom`, `left` and `right`)
 
-- by setting `smartPosition`to `true`, and the tooltip will decide its best position itself.
+- by leaving `position` unset, which will default to an automatic positioning.
 
 You will see 2 components using smart positioned tooltips.
 The last one is a footer-like component to show how the tooltip changes position when close to the bottom of the viewport.
