@@ -17,36 +17,30 @@ function Header() {
       </article>
       <header>
         <ul>
-          <TooltipWrapper smartPosition content="🏡 is for everyone">
+          <TooltipWrapper content="🏡 is for everyone">
             <li>Home</li>
           </TooltipWrapper>
           <li>Our product</li>
-          <TooltipWrapper smartPosition content={Message}>
+          <TooltipWrapper content={Message}>
             <li>Who are we?</li>
           </TooltipWrapper>
           <li>Jobs</li>
-          <TooltipWrapper
-            smartPosition
-            content="Some content with veryveryverylong words inside"
-          >
+          <TooltipWrapper content="Some content with veryveryverylong words inside">
             <li>FAQ</li>
           </TooltipWrapper>
         </ul>
       </header>
       <header style={{ marginTop: "auto" }}>
         <ul>
-          <TooltipWrapper
-            smartPosition
-            content="Some content with veryveryverylong words inside"
-          >
+          <TooltipWrapper content="Some content with veryveryverylong words inside">
             <li>Home</li>
           </TooltipWrapper>
           <li>Our product</li>
-          <TooltipWrapper smartPosition content={Message}>
+          <TooltipWrapper content={Message}>
             <li>Who are we?</li>
           </TooltipWrapper>
           <li>Jobs</li>
-          <TooltipWrapper smartPosition content="Frequently asked questions">
+          <TooltipWrapper content="Frequently asked questions">
             <li>FAQ</li>
           </TooltipWrapper>
         </ul>

@@ -4,13 +4,13 @@ import Tooltip from "./Tooltip";
 import usePosition from "../hooks/usePosition";
 import "../styles/Tooltip.scss";
 
-function TooltipWrapper({ children, content, position, smartPosition }) {
+function TooltipWrapper({ children, content, position }) {
   const [visible, setVisible] = useState(false);
   const [safePosition, setSafePosition] = useState();
   const ref = useRef();
 
   useEffect(() => {
-    if (smartPosition) {
+    if (position === "auto") {
       setSafePosition(usePosition(ref.current));
     }
   }, []);
@@ -29,7 +29,7 @@ function TooltipWrapper({ children, content, position, smartPosition }) {
   };
 
   const handleKeyDown = (e) => {
-    e.key == "Escape" && setVisible(false);
+    e.key === "Escape" && setVisible(false);
   };
 
   return (
@@ -58,15 +58,13 @@ function TooltipWrapper({ children, content, position, smartPosition }) {
 TooltipWrapper.propTypes = {
   children: PropTypes.node.isRequired,
   content: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
-  position: PropTypes.oneOf(["top", "right", "bottom", "left"]),
-  smartPosition: PropTypes.bool,
+  position: PropTypes.oneOf(["auto", "top", "right", "bottom", "left"]),
 };
 
 TooltipWrapper.defaultProps = {
   children: null,
   content: "",
-  position: "bottom",
-  smartPosition: false,
+  position: "auto",
 };
 
 export default TooltipWrapper;
